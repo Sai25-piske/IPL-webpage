@@ -53,6 +53,7 @@
       background: rgba(0, 31, 63, 0.8);
       border-radius: 20px;
       box-shadow: 0 0 30px #00000055;
+      margin-bottom: 30px;
     }
 
     h2 {
@@ -102,8 +103,37 @@
       margin-bottom: 8px;
     }
 
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .stat-card {
+      background: rgba(249, 215, 28, 0.1);
+      border: 2px solid #f9d71c;
+      border-radius: 15px;
+      padding: 15px 20px;
+      box-shadow: 0 0 20px #00000055;
+    }
+
+    .stat-card h3 {
+      color: #f9d71c;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
+      color: #fff;
+      font-size: 1rem;
+    }
+
     footer {
-      margin-top: 30px;
       background: #001f3f;
       padding: 15px;
       font-size: 0.9rem;
@@ -142,7 +172,6 @@
       the Super Kings embody strength, loyalty, and excellence — continuing to inspire millions of cricket lovers around the globe.
     </p>
 
-    <!-- Players Section -->
     <h2>Star Players</h2>
     <div class="players">
       <div class="player-card">
@@ -161,6 +190,45 @@
         <img src="images/ashwin.jpg" alt="Ravichandran Ashwin">
         <h3>Ravichandran Ashwin</h3>
         <p>One of India’s smartest spinners, Ashwin began his IPL career with CSK and played a vital role in their early success. His variations and cricketing intelligence set him apart.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dhoni Records Section -->
+  <section>
+    <h2>🏆 MS Dhoni – Career Records & Achievements</h2>
+    <p>Mahendra Singh Dhoni is one of cricket’s greatest captains and finishers. His leadership took India to new heights across all formats of the game and brought unmatched glory to CSK in the IPL.</p>
+
+    <div class="stats">
+      <div class="stat-card">
+        <h3>International Career</h3>
+        <ul>
+          <li><strong>Tests:</strong> 90 matches | 4,876 runs | Avg: 38.1</li>
+          <li><strong>ODIs:</strong> 350 matches | 10,773 runs | Avg: 50.6</li>
+          <li><strong>T20Is:</strong> 98 matches | 1,617 runs | Avg: 37.6</li>
+          <li><strong>Captaincy:</strong> 332 matches across formats – Most by any Indian captain</li>
+        </ul>
+      </div>
+
+      <div class="stat-card">
+        <h3>Major Trophies as Captain</h3>
+        <ul>
+          <li>🏆 ICC T20 World Cup – 2007</li>
+          <li>🏆 ICC Cricket World Cup – 2011</li>
+          <li>🏆 ICC Champions Trophy – 2013</li>
+          <li>🏆 4 IPL Titles with CSK (2010, 2011, 2018, 2021)</li>
+          <li>🏆 2 Champions League T20 Titles (2010, 2014)</li>
+        </ul>
+      </div>
+
+      <div class="stat-card">
+        <h3>CSK IPL Records</h3>
+        <ul>
+          <li>Matches: 250+ | Runs: 5,000+ | Avg: 39+</li>
+          <li>Most matches as captain in IPL history</li>
+          <li>Best Win % among captains (59%+)</li>
+          <li>Most sixes by an Indian wicket-keeper</li>
+        </ul>
       </div>
     </div>
   </section>
