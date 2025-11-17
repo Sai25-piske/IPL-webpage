@@ -5,16 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chennai Super Kings</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
       background: linear-gradient(to bottom right, #f9d71c, #001f3f);
       color: #fff;
-      overflow-x: hidden;
+      text-align: center;
     }
 
     header {
@@ -23,100 +19,66 @@
       padding: 20px 0;
       font-size: 2rem;
       font-weight: 700;
-      text-align: center;
       letter-spacing: 2px;
       text-shadow: 2px 2px 4px #00000066;
     }
 
-    .container {
+    .layout {
       display: flex;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    /* LEFT SIDE — PLAYER SECTION */
-    .left-panel {
-      width: 50%;
       padding: 20px;
-      overflow-y: auto;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(4px);
-      border-right: 3px solid #f9d71c;
+      gap: 20px;
     }
 
-    .player-block {
-      margin-bottom: 20px;
-      background: rgba(249, 215, 28, 0.12);
+    /* LHS Player Section */
+    .players-section {
+      width: 40%;
+    }
+
+    .player-card {
+      background: rgba(249, 215, 28, 0.15);
+      border: 2px solid #f9d71c;
+      border-radius: 15px;
       padding: 15px;
-      border-radius: 15px;
-      border: 1px solid #f9d71c;
-      box-shadow: 0 0 15px #00000066;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
-    .player-block img {
-      width: 100%;
-      border-radius: 15px;
-      height: 300px;
-      object-fit: contain;
-        object-position: top;
-      box-shadow: 0 0 20px #001f3f;
+    .player-card img {
+      width: 160px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
-    .player-block h2 {
-      color: #f9d71c;
-      margin-top: 10px;
-      text-align: center;
+    .player-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: navy;
+      margin-bottom: 6px;
     }
 
-    .player-block p {
-      font-size: 1rem;
-      line-height: 1.6;
+    .player-tagline {
+      font-size: 1.2rem;
+      color: black;
+      font-weight: 600;
     }
 
-    /* RIGHT SIDE — TEAM DETAILS */
-    .right-panel {
-      width: 50%;
-      padding: 25px;
-      overflow-y: auto;
-      background: rgba(0, 31, 63, 0.75);
-      backdrop-filter: blur(6px);
-    }
-
-    .section {
-      margin-bottom: 25px;
+    /* RHS Content Section */
+    .content-section {
+      width: 60%;
+      background: rgba(0, 31, 63, 0.85);
       padding: 20px;
-      background: rgba(0, 0, 0, 0.25);
       border-radius: 15px;
-      border: 1px solid #f9d71c;
-      box-shadow: 0 0 20px #00000055;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: white;
     }
 
-    .section h2 {
+    .content-section h2 {
       color: #f9d71c;
       margin-bottom: 10px;
-      text-align: center;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      line-height: 1.7;
-    }
-
-    .stat-card {
-      background: rgba(249, 215, 28, 0.15);
-      border: 1px solid #f9d71c;
-      border-radius: 12px;
-      padding: 12px;
-      margin-bottom: 15px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 10px;
-      background: #001f3f;
-      color: #f9d71c;
-      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -124,81 +86,48 @@
 
 <header>🏏 Chennai Super Kings 🦁</header>
 
-<div class="container">
+<div class="layout">
+  <!-- LHS Player Cards -->
+  <div class="players-section">
 
-  <!-- LEFT PANEL (Players) -->
-  <div class="left-panel">
-
-    <div class="player-block">
-      <img src="images/dhoni.jpg" />
-      <h2>MS Dhoni</h2>
-      <p style="color:#000;">Captain Cool and the backbone of CSK's golden era.</p>
+    <div class="player-card">
+      <img src="images/dhoni.jpg" alt="MS Dhoni" />
+      <div>
+        <div class="player-name">MS DHONI</div>
+        <div class="player-tagline">India's legendary finisher & iconic captain</div>
+      </div>
     </div>
 
-    <div class="player-block">
-      <img src="images/jadeja.jpg" />
-      <h2>Ravindra Jadeja</h2>
-      <p style="color:#000;"><span style="font-size:1.3rem; color:navy; font-weight:600;">India's finest all‑rounder with unmatched fielding skills.</span></p>
+    <div class="player-card">
+      <img src="images/jadeja.jpg" alt="Ravindra Jadeja" />
+      <div>
+        <div class="player-name">RAVINDRA JADEJA</div>
+        <div class="player-tagline">India's finest all-rounder with unmatched fielding skills</div>
+      </div>
     </div>
 
-    <div class="player-block">
-      <img src="images/ashwin.jpg" />
-      <h2>Ravichandran Ashwin</h2>
-      <p style="color:#000;">Master spinner who began his iconic IPL journey with CSK.</p>
-    </div>
-
-  </div>
-
-
-  <!-- RIGHT PANEL (CSK Details + Career Sections) -->
-  <div class="right-panel">
-
-    <div class="section">
-      <h2>About CSK</h2>
-      <p style="color:#000;">Chennai Super Kings is one of the most successful cricket franchises in IPL history.</p>
-    </div>
-
-    <div class="section">
-      <h2>MS Dhoni – Achievements</h2>
-      <div class="stat-card"><ul><li>10,000+ ODI runs</li><li>4 IPL titles</li><li>Best captain in IPL history</li></ul></div>
-    </div>
-
-    <div class="section">
-      <h2>Jadeja – Cricket Journey</h2>
-      <div class="stat-card"><ul><li>Top Test all‑rounder</li><li>150+ IPL wickets</li><li>Match‑winner for CSK</li></ul></div>
-    </div>
-
-    <div class="section">
-      <h2>Ashwin – Career Highlights</h2>
-      <div class="stat-card"><ul><li>500+ Test wickets</li><li>Innovator of carrom ball</li><li>Key bowler in CSK early triumphs</li></ul></div>
+    <div class="player-card">
+      <img src="images/ashwin.jpg" alt="Ravichandran Ashwin" />
+      <div>
+        <div class="player-name">RAVICHANDRAN ASHWIN</div>
+        <div class="player-tagline">India's master spinner & cricketing genius</div>
+      </div>
     </div>
 
   </div>
 
+  <!-- RHS Content Section -->
+  <div class="content-section">
+    <h2>About Chennai Super Kings</h2>
+    <p>Chennai Super Kings (CSK) is one of the most successful and consistent franchises in IPL history. Led by MS Dhoni, the team is known for loyalty, team spirit, and a winning attitude.</p>
+
+    <h2>Team Legacy</h2>
+    <p>Founded in 2008, CSK has delivered iconic performances year after year with a strong squad and passionate fanbase known as the Yellow Army.</p>
+
+    <h2>Spirit of the Lions</h2>
+    <p>“Whistle Podu” embodies joy, energy, and the unbeatable Chennai spirit. CSK continues to inspire fans worldwide with its fearless cricket.</p>
+  </div>
 </div>
 
-<footer>© 2025 Chennai Super Kings Fan Page | Designed by Sai Piske 🦁</footer>
-
-  <!-- Player Cricket Histories Added -->
-  <section id="player-histories" style="padding:20px; line-height:1.6;">
-    <h2>Player Cricket Histories</h2>
-
-    <div class="history-block">
-      <h3 style="color: navy; font-size:1.8rem; font-weight:700;">MS Dhoni – Cricket History</h3>
-      <p style="color:#000;">Mahendra Singh Dhoni, born on 7 July 1981, is one of the most successful captains in Indian cricket history. Known for his calm demeanor and sharp decision-making, Dhoni led India to major ICC titles including the 2007 T20 World Cup, 2011 ODI World Cup, and 2013 Champions Trophy. In the IPL, he has been the backbone of Chennai Super Kings (CSK) since 2008, leading them to multiple titles. Dhoni is widely regarded as the greatest finisher in limited-overs cricket and the best wicket-keeper India has produced.</p>
-    </div>
-
-    <div class="history-block">
-      <h3 style="color: navy; font-size:1.8rem; font-weight:700;">Ravindra Jadeja – Cricket History</h3>
-      <p style="color:#000;">Ravindra Jadeja, born on 6 December 1988, is one of the world’s most elite all-rounders. Making his mark first in domestic cricket, Jadeja quickly rose through the ranks with strong performances in the Ranji Trophy. For India, he became renowned for his deadly accuracy in bowling, electric fielding, and match-changing batting. In the IPL, Jadeja has been a vital player for CSK, contributing significantly with both bat and ball. His consistency and all-round abilities make him one of the most valuable players globally.</p>
-      <p style="color: navy; font-size: 1.3rem; font-weight: 600; margin-top: 10px;">India's finest all‑rounder with unmatched fielding skills.</p>
-    </div>
-
-    <div class="history-block">
-      <h3 style="color: navy; font-size:1.8rem; font-weight:700;">Ravichandran Ashwin – Cricket History</h3>
-      <p style="color:#000;">Ravichandran Ashwin, born on 17 September 1986, is one of the most successful off‑spinners in modern cricket. Starting his career as an opening batsman before converting into a bowler, Ashwin became a crucial Test-match winner for India with multiple five‑wicket hauls. He is also known for his intelligence, variations, and tactical mindset. In the IPL, he played key seasons for CSK, contributing heavily during their dominant early years. Ashwin remains one of India’s most decorated and analytical cricket minds.</p>
-    </div>
-
-  </section>
 </body>
 </html>
