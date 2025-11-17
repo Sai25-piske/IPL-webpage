@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chennai Super Kings</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
       background: linear-gradient(to bottom right, #f9d71c, #001f3f);
       color: #fff;
-      text-align: center;
+      overflow-x: hidden;
     }
 
     header {
@@ -19,275 +23,160 @@
       padding: 20px 0;
       font-size: 2rem;
       font-weight: 700;
+      text-align: center;
       letter-spacing: 2px;
       text-shadow: 2px 2px 4px #00000066;
     }
 
-    .banner {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap;\n      margin: 10px 0;\n      gap: 10px;\n    }
-
-    .banner img {
-      width: 300px;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 0 20px #001f3f;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    .container {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
     }
 
-    .banner img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px #f9d71c;
-    }
-
-    section {
-      max-width: 900px;
-      margin: auto;
+    /* LEFT SIDE — PLAYER SECTION */
+    .left-panel {
+      width: 50%;
       padding: 20px;
-      background: rgba(0, 31, 63, 0.8);
-      border-radius: 20px;
-      box-shadow: 0 0 30px #00000055;
-      margin-bottom: 30px;
+      overflow-y: auto;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(4px);
+      border-right: 3px solid #f9d71c;
     }
 
-    h2 {
-      color: #f9d71c;
-      margin-bottom: 15px;
-    }
-
-    p {
-      line-height: 1.8;
-      font-size: 1.1rem;
-      color: #f5f5f5;
-    }
-
-    .players {\n      display: flex;\n      flex-wrap: wrap;\n      justify-content: space-between;\n      gap: 10px;\n      margin-top: 10px;\n    }
-
-    .player-card {\n      background: rgba(249, 215, 28, 0.1);\n      border: 2px solid #f9d71c;\n      border-radius: 15px;\n      width: 48%;\n      padding: 12px;\n      display: flex;\n      gap: 12px;\n      align-items: center;\n      box-shadow: 0 0 10px #00000066;\n      transition: transform 0.3s ease, box-shadow 0.3s ease;\n    }
-
-    .player-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 25px #f9d71c;
-    }
-
-    .player-card img {
-      width: 160px;
-      height: 160px;
-      border-radius: 10px;
-      object-fit: cover;
-      margin-bottom: 0;
-    }
-
-    .player-card h3 {
-      color: #f9d71c;
-      margin-bottom: 8px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-      text-align: left;
-    }
-
-    .stat-card {
-      background: rgba(249, 215, 28, 0.1);
-      border: 2px solid #f9d71c;
+    .player-block {
+      margin-bottom: 20px;
+      background: rgba(249, 215, 28, 0.12);
+      padding: 15px;
       border-radius: 15px;
-      padding: 15px 20px;
+      border: 1px solid #f9d71c;
+      box-shadow: 0 0 15px #00000066;
+    }
+
+    .player-block img {
+      width: 100%;
+      border-radius: 15px;
+      height: 300px;
+      object-fit: cover;
+      box-shadow: 0 0 20px #001f3f;
+    }
+
+    .player-block h2 {
+      color: #f9d71c;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .player-block p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* RIGHT SIDE — TEAM DETAILS */
+    .right-panel {
+      width: 50%;
+      padding: 25px;
+      overflow-y: auto;
+      background: rgba(0, 31, 63, 0.75);
+      backdrop-filter: blur(6px);
+    }
+
+    .section {
+      margin-bottom: 25px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 15px;
+      border: 1px solid #f9d71c;
       box-shadow: 0 0 20px #00000055;
     }
 
-    .stat-card h3 {
+    .section h2 {
       color: #f9d71c;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       text-align: center;
     }
 
     ul {
       list-style: none;
       padding: 0;
-      line-height: 1.8;
-      color: #fff;
-      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .stat-card {
+      background: rgba(249, 215, 28, 0.15);
+      border: 1px solid #f9d71c;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 15px;
     }
 
     footer {
+      text-align: center;
+      padding: 10px;
       background: #001f3f;
-      padding: 15px;
-      font-size: 0.9rem;
       color: #f9d71c;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <header>🏏 Chennai Super Kings 🦁</header>
+<header>🏏 Chennai Super Kings 🦁</header>
 
-  <div class="banner">
-    <img src="images/ashwin.jpg" alt="Ravichandran Ashwin - CSK Player" />
-    <img src="images/dhoni.jpg" alt="MS Dhoni - CSK Captain" />
-    <img src="images/jadeja.jpg" alt="Ravindra Jadeja - CSK All-Rounder" />
+<div class="container">
+
+  <!-- LEFT PANEL (Players) -->
+  <div class="left-panel">
+
+    <div class="player-block">
+      <img src="images/dhoni.jpg" />
+      <h2>MS Dhoni</h2>
+      <p>Captain Cool and the backbone of CSK's golden era.</p>
+    </div>
+
+    <div class="player-block">
+      <img src="images/jadeja.jpg" />
+      <h2>Ravindra Jadeja</h2>
+      <p>India's finest all‑rounder with unmatched fielding skills.</p>
+    </div>
+
+    <div class="player-block">
+      <img src="images/ashwin.jpg" />
+      <h2>Ravichandran Ashwin</h2>
+      <p>Master spinner who began his iconic IPL journey with CSK.</p>
+    </div>
+
   </div>
 
-  <section>
-    <h2>About Chennai Super Kings</h2>
-    <p>
-      Chennai Super Kings (CSK) is one of the most successful franchises in the Indian Premier League (IPL), led by the legendary
-      Mahendra Singh Dhoni. Known for their consistency, teamwork, and a never-say-die attitude, CSK has captured multiple IPL titles 
-      and has one of the most passionate fan bases across India — the “Yellow Army”.
-    </p>
 
-    <h2>Team Legacy</h2>
-    <p>
-      Founded in 2008 and based in Chennai, Tamil Nadu, CSK is owned by India Cements. The team plays its home matches at the
-      M. A. Chidambaram Stadium, fondly called “Chepauk”. Over the years, CSK has produced some of the finest performances in IPL history,
-      guided by Dhoni’s calm leadership and the brilliance of players like Suresh Raina, Jadeja, and Ashwin.
-    </p>
+  <!-- RIGHT PANEL (CSK Details + Career Sections) -->
+  <div class="right-panel">
 
-    <h2>Spirit of the Lions</h2>
-    <p>
-      The CSK motto “Whistle Podu” represents the joy, unity, and passion of Chennai fans. With their signature yellow jerseys and lion emblem,
-      the Super Kings embody strength, loyalty, and excellence — continuing to inspire millions of cricket lovers around the globe.
-    </p>
-
-    <h2>Star Players</h2>
-    <div class="players">
-      <div class="player-card">
-        <img src="images/dhoni.jpg" alt="MS Dhoni">
-        <h3>Mahendra Singh Dhoni (Captain)</h3>
-        <p>Known as 'Captain Cool', Dhoni is the heart of CSK. His calm leadership and incredible finishing skills have led the team to multiple IPL titles, making him one of the most respected figures in world cricket.</p>
-      </div>
-
-      <div class="player-card">
-        <img src="images/jadeja.jpg" alt="Ravindra Jadeja">
-        <h3>Ravindra Jadeja</h3>
-        <p>A true all-rounder, Jadeja’s explosive batting, sharp fielding, and wicket-taking spin make him a match-winner on any given day. He embodies CSK’s fighting spirit.</p>
-      </div>
-
-      <div class="player-card">
-        <img src="images/ashwin.jpg" alt="Ravichandran Ashwin">
-        <h3>Ravichandran Ashwin</h3>
-        <p>One of India’s smartest spinners, Ashwin began his IPL career with CSK and played a vital role in their early success. His variations and cricketing intelligence set him apart.</p>
-      </div>
+    <div class="section">
+      <h2>About CSK</h2>
+      <p>Chennai Super Kings is one of the most successful cricket franchises in IPL history.</p>
     </div>
-  </section>
 
-  <!-- Dhoni Records Section -->
-  <section>
-    <h2>🏆 MS Dhoni – Career Records & Achievements</h2>
-    <p>Mahendra Singh Dhoni is one of cricket’s greatest captains and finishers. His leadership took India to new heights across all formats of the game and brought unmatched glory to CSK in the IPL.</p>
-
-    <div class="stats">
-      <div class="stat-card">
-        <h3>International Career</h3>
-        <ul>
-          <li><strong>Tests:</strong> 90 matches | 4,876 runs | Avg: 38.1</li>
-          <li><strong>ODIs:</strong> 350 matches | 10,773 runs | Avg: 50.6</li>
-          <li><strong>T20Is:</strong> 98 matches | 1,617 runs | Avg: 37.6</li>
-          <li><strong>Captaincy:</strong> 332 matches across formats – Most by any Indian captain</li>
-        </ul>
-      </div>
-
-      <div class="stat-card">
-        <h3>Major Trophies as Captain</h3>
-        <ul>
-          <li>🏆 ICC T20 World Cup – 2007</li>
-          <li>🏆 ICC Cricket World Cup – 2011</li>
-          <li>🏆 ICC Champions Trophy – 2013</li>
-          <li>🏆 4 IPL Titles with CSK (2010, 2011, 2018, 2021)</li>
-          <li>🏆 2 Champions League T20 Titles (2010, 2014)</li>
-        </ul>
-      </div>
-
-      <div class="stat-card">
-        <h3>CSK IPL Records</h3>
-        <ul>
-          <li>Matches: 250+ | Runs: 5,000+ | Avg: 39+</li>
-          <li>Most matches as captain in IPL history</li>
-          <li>Best Win % among captains (59%+)</li>
-          <li>Most sixes by an Indian wicket-keeper</li>
-        </ul>
-      </div>
+    <div class="section">
+      <h2>MS Dhoni – Achievements</h2>
+      <div class="stat-card"><ul><li>10,000+ ODI runs</li><li>4 IPL titles</li><li>Best captain in IPL history</li></ul></div>
     </div>
-  </section>
 
-  <!-- Jadeja Career Section -->
-  <section>
-    <h2>🛡️ Ravindra Jadeja – Career Highlights & Cricket Journey</h2>
-    <p>Ravindra Jadeja, fondly called "Sir Jadeja", is one of India's premier all-rounders. Known for his deadly accuracy with spin, sharp fielding, and explosive finishing ability, Jadeja has become a pillar in both Indian cricket and CSK’s success.</p>
-
-    <div class="stats">
-      <div class="stat-card">
-        <h3>International Career</h3>
-        <ul>
-          <li><strong>Tests:</strong> 80+ matches | 3,000+ runs | 280+ wickets</li>
-          <li><strong>ODIs:</strong> 200+ matches | 2,500+ runs | 200+ wickets</li>
-          <li><strong>T20Is:</strong> 60+ matches | 450+ runs | 50+ wickets</li>
-          <li>ICC’s No.1 Ranked Test All-Rounder (Multiple Years)</li>
-        </ul>
-      </div>
-
-      <div class="stat-card">
-        <h3>IPL & CSK Achievements</h3>
-        <ul>
-          <li>Key finisher and match-winner for CSK</li>
-          <li>Over 2,700 IPL runs and 150+ wickets</li>
-          <li>Best fielders in IPL history</li>
-          <li>Played decisive role in CSK’s 2018 & 2021 title wins</li>
-        </ul>
-      </div>
-
-      <div class="stat-card">
-        <h3>Notable Moments</h3>
-        <ul>
-          <li>Match-winning 175* vs Sri Lanka (2022)</li>
-          <li>Consistent match-winner with both bat and ball in Tests</li>
-          <li>Crucial final-over heroics in IPL 2023 final</li>
-        </ul>
-      </div>
+    <div class="section">
+      <h2>Jadeja – Cricket Journey</h2>
+      <div class="stat-card"><ul><li>Top Test all‑rounder</li><li>150+ IPL wickets</li><li>Match‑winner for CSK</li></ul></div>
     </div>
-  </section>
 
-  <!-- Ashwin Career Section -->
-  <section>
-    <h2>🎯 Ravichandran Ashwin – Career Highlights & Cricket Journey</h2>
-    <p>Ravichandran Ashwin is one of the most intelligent and innovative spin bowlers of modern cricket. Beginning his IPL career with CSK, Ashwin became a vital part of India’s Test dominance and is one of the fastest to reach major bowling milestones.</p>
-
-    <div class="stats">
-      <div class="stat-card">
-        <h3>International Career</h3>
-        <ul>
-          <li><strong>Tests:</strong> 100+ matches | 500+ wickets | 3,000+ runs</li>
-          <li><strong>ODIs:</strong> 115+ matches | 150+ wickets | 700+ runs</li>
-          <li><strong>T20Is:</strong> 60+ matches | 70+ wickets</li>
-          <li>Fastest to 300 & 350 Test wickets (at various times)</li>
-        </ul>
-      </div>
-
-      <div class="stat-card">
-        <h3>IPL Journey</h3>
-        <ul>
-          <li>Debuted with CSK and key bowler during 2010 & 2011 IPL title wins</li>
-          <li>150+ IPL wickets across franchises</li>
-          <li>Famous for dismissing Chris Gayle with a carrom ball in IPL 2011 final</li>
-        </ul>
-      </div>
-
-      <div class="stat-card">
-        <h3>Unique Achievements</h3>
-        <ul>
-          <li>Known for innovations like carrom ball and reverse carrom ball</li>
-          <li>Scored 5 Test centuries as a bowling all-rounder</li>
-          <li>ICC Cricketer of the Year – 2016</li>
-        </ul>
-      </div>
+    <div class="section">
+      <h2>Ashwin – Career Highlights</h2>
+      <div class="stat-card"><ul><li>500+ Test wickets</li><li>Innovator of carrom ball</li><li>Key bowler in CSK early triumphs</li></ul></div>
     </div>
-  </section>
 
-  <footer>
-    © 2025 Chennai Super Kings Fan Page | Designed by Sai Piske 🦁
-  </footer>
+  </div>
+
+</div>
+
+<footer>© 2025 Chennai Super Kings Fan Page | Designed by Sai Piske 🦁</footer>
 
 </body>
 </html>
