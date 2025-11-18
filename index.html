@@ -1,147 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Challengers Bangalore</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #8b0000, #d40000, #ffb300);
-            color: white;
-            text-align: center;
-        }
-        header {
-            padding: 30px 20px;
-            font-size: 48px;
-            font-weight: 800;
-            text-shadow: 0 0 20px #ffcc00;
-        }
-        .container {
-            width: 90%;
-            margin: auto;
-        }
-        .cards {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-        .card {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 20px;
-            width: 320px;
-            border-radius: 20px;
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
-            transition: 0.3s;
-        }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 1);
-        }
-        .card img {
-            width: 100%;
-            border-radius: 15px;
-        }
-        .player-name {
-            font-size: 32px;
-            margin-top: 15px;
-            font-weight: 700;
-            color: #ffcc00;
-            text-shadow: 0 0 10px black;
-        }
-        .player-desc {
-            font-size: 20px;
-            margin-top: 10px;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Royal Challengers Bangalore</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #8b0000, #d40000, #ffb300);
+    color: white;
+    display: flex;
+  }
+  .lhs {
+    width: 45%;
+    padding: 20px;
+    background: rgba(0,0,0,0.25);
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.4);
+  }
+  .rhs {
+    width: 55%;
+    padding: 30px;
+  }
+  .player-block {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .player-block img {
+    width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255,215,0,0.7);
+  }
+  .player-block h2 {
+    font-size: 30px;
+    margin-top: 15px;
+    color: #ffcc00;
+    text-shadow: 0 0 10px black;
+  }
+  .player-block p {
+    font-size: 18px;
+  }
+  .rhs h1 {
+    font-size: 45px;
+    text-shadow: 0 0 15px black;
+  }
+  .rhs p, .rhs li {
+    font-size: 20px;
+    line-height: 32px;
+  }
 
-        /* Achievements Section */
-        .achievements {
-            margin-top: 60px;
-            padding: 40px;
-            background: rgba(0, 0, 0, 0.3);
-            border-top: 3px solid gold;
-            border-bottom: 3px solid gold;
-        }
-        .achievements h2 {
-            font-size: 36px;
-            color: gold;
-            margin-bottom: 20px;
-        }
-        .achievements ul {
-            font-size: 22px;
-            line-height: 40px;
-            list-style: none;
-            padding: 0;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            font-size: 20px;
-            background: rgba(0,0,0,0.4);
-        }
-    </style>
+  /* Player History Blocks (CSK-style) */
+  .history-section {
+    background: #fff8d1;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 12px;
+    color: #000;
+  }
+  .history-block {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #001f3f;
+    margin-bottom: 20px;
+  }
+  .history-block h3 {
+    color: #001f3f;
+  }
+</style>
 </head>
 <body>
 
-<header>Royal Challengers Bangalore</header>
-<div class="container">
+<div class="lhs">
+  <div class="player-block">
+    <img src="https://i.imgur.com/6nC6QxA.jpeg" />
+    <h2>Virat Kohli</h2>
+    <p>The Run Machine and RCB icon with unmatched consistency.</p>
+  </div>
 
-    <h2 style="font-size: 40px; margin-top: 20px; text-shadow: 0 0 10px black;">Team Bio</h2>
-    <p style="font-size: 22px; max-width: 900px; margin: auto;">
-        Royal Challengers Bangalore (RCB) is one of the most beloved teams in the IPL, known for its aggressive gameplay,
-        loyal fan base, and legendary players like Virat Kohli and AB de Villiers. Despite not yet winning the IPL trophy,
-        RCB remains one of the strongest and most iconic teams in T20 cricket.
-    </p>
+  <div class="player-block">
+    <img src="https://i.imgur.com/y5qCkLb.jpeg" />
+    <h2>AB de Villiers</h2>
+    <p>Mr. 360°, the magician who redefined modern T20 batting.</p>
+  </div>
 
-    <div class="cards">
-        <div class="card">
-            <img src="https://i.imgur.com/6nC6QxA.jpeg" alt="Virat Kohli">
-            <div class="player-name">Virat Kohli</div>
-            <div class="player-desc">The Run Machine of world cricket, former RCB captain and IPL's all-time leading run-scorer.</div>
-        </div>
-
-        <div class="card">
-            <img src="https://i.imgur.com/y5qCkLb.jpeg" alt="AB de Villiers">
-            <div class="player-name">AB de Villiers</div>
-            <div class="player-desc">Mr. 360° – one of the greatest entertainers, match-winners and most loved RCB icons.</div>
-        </div>
-
-        <div class="card">
-            <img src="https://i.imgur.com/Cl9hDyp.jpeg" alt="Mohammad Siraj">
-            <div class="player-name">Mohammad Siraj</div>
-            <div class="player-desc">RCB's fiery pace bowler, known for his swing, passion, and game-changing spells.</div>
-        </div>
-    </div>
-
-    <div class="achievements">
-        <h2>Team Achievements & Highlights</h2>
-        <ul>
-            <li>🏆 Reached IPL Finals in 2009, 2011, 2016</li>
-            <li>🔥 Highest ever IPL team total (263/5)</li>
-            <li>🌟 Home of legends like Virat Kohli & AB de Villiers</li>
-            <li>💥 Holds multiple batting records across seasons</li>
-        </ul>
-    </div>
-
-    <h2 style="font-size: 34px; margin-top: 40px; color: gold;">Player Cricket History</h2>
-    <div style="font-size: 22px; max-width: 900px; margin: auto; line-height: 35px;">
-        <p><b>Virat Kohli:</b> Former India and RCB captain, holds the record for highest runs in IPL. Known for consistency,
-           aggression, and match-winning ability. One of the world's greatest batsmen.</p>
-
-        <p><b>AB de Villiers:</b> South African legend known for 360° stroke play. One of the most explosive batsmen in IPL
-           history and a loyal backbone of RCB lineup for a decade.</p>
-
-        <p><b>Mohammad Siraj:</b> Rose from humble beginnings to become one of India's top pacers. Known for fiery spells and
-           outstanding performances for RCB.</p>
-    </div>
-
+  <div class="player-block">
+    <img src="https://i.imgur.com/Cl9hDyp.jpeg" />
+    <h2>Mohammad Siraj</h2>
+    <p>Fiery pace bowler known for passion and deadly spells.</p>
+  </div>
 </div>
 
-<footer>Designed by Sai Piske</footer>
+<div class="rhs">
+  <h1>Royal Challengers Bangalore</h1>
+  <p>Beloved IPL team known for aggressive cricket, loyal fanbase, and legends like Virat Kohli and AB de Villiers.</p>
+
+  <h2>Team Achievements</h2>
+  <ul>
+    <li>Reached IPL Finals: 2009, 2011, 2016</li>
+    <li>Highest ever IPL team total: 263/5</li>
+    <li>Home of icons like Kohli & ABD</li>
+    <li>Multiple batting records across seasons</li>
+  </ul>
+
+  <h2>Player Cricket History</h2>
+  <p><b>Virat Kohli:</b> IPL’s leading run-scorer, former RCB captain, one of the greatest modern batsmen.</p>
+  <p><b>AB de Villiers:</b> Legendary South African batsman known for innovation and clutch match-winning knocks.</p>
+  <p><b>Mohammad Siraj:</b> Inspirational rise to becoming India’s leading pacer with top RCB performances.</p>
+
+  <!-- Added CSK-style Player Histories -->
+  <section class="history-section">
+    <h2 style="color:#001f3f; text-align:center;">Player Cricket Histories</h2>
+
+    <div class="history-block">
+      <h3>Virat Kohli – Cricket History</h3>
+      <p>Virat Kohli, one of the greatest batsmen in modern cricket, made his international debut in 2008. Known for his aggressive mindset, unmatched fitness, and consistency, Kohli has dominated all formats. In the IPL, he became the tournament's all-time leading run-scorer and served as RCB’s longest-running captain. His 2016 IPL season remains iconic with 973 runs.</p>
+      <p><b>Career Highlights:</b><br>
+      • ICC Cricketer of the Decade<br>
+      • 75+ International centuries<br>
+      • Leading run-scorer in IPL history</p>
+    </div>
+
+    <div class="history-block">
+      <h3>AB de Villiers – Cricket History</h3>
+      <p>AB de Villiers, also known as "Mr. 360°", debuted internationally in 2004 and quickly became one of cricket’s most innovative and explosive batsmen. With unmatched shot creativity, ABD has single-handedly won matches for RCB for over a decade. His partnership with Kohli is considered one of the best in T20 cricket.</p>
+      <p><b>Career Highlights:</b><br>
+      • Fastest 50, 100 & 150 in ODIs<br>
+      • Over 5000 IPL runs<br>
+      • One of the most loved RCB players ever</p>
+    </div>
+
+    <div class="history-block">
+      <h3>Mohammad Siraj – Cricket History</h3>
+      <p>Mohammad Siraj rose from humble beginnings to become a premier fast bowler for India. Debuting in 2017, Siraj is now known for his swing, seam movement, and aggression. For RCB, he has produced memorable spells including a spectacular Powerplay wicket burst in 2020.</p>
+      <p><b>Career Highlights:</b><br>
+      • 2023 Asia Cup Final: 6-wicket spell<br>
+      • Key bowler across formats for India<br>
+      • One of the most improved pacers in IPL</p>
+    </div>
+  </section>
+
+  <br><br>
+  <p style="color: gold; font-size: 22px;">Designed by Sai Piske</p>
+</div>
 
 </body>
 </html>
